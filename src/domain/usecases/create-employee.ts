@@ -1,5 +1,12 @@
 import { EmployeeModel } from '../models'
 
+export type CreateEmployeeParams = {
+  phone: string
+  name: string
+  email: string
+  salary: number
+}
+
 export interface CreateEmployee {
-  create: (params: EmployeeModel) => Promise<null>
+  create: (params: CreateEmployeeParams) => Promise<EmployeeModel>
 }
