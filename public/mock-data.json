@@ -1,0 +1,30 @@
+[
+  {
+    "name": "John",
+    "id": "1",
+    "email": "john@maill.com",
+    "salary": 1222,
+    "phone": "1296666666"
+  },
+  {
+    "name": "John",
+    "id": "2",
+    "email": "john@maill.com",
+    "salary": 1222,
+    "phone": "1296666666"
+  },
+  {
+    "name": "John",
+    "id": "3",
+    "email": "john@maill.com",
+    "phone": "1296666666",
+    "salary": 1222
+  },
+  {
+    "name": "John",
+    "id": "4",
+    "email": "john@maill.com",
+    "phone": "1296666666",
+    "salary": 1222
+  }
+]
