@@ -1,0 +1,18 @@
+.card {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  background-color: var(--clr-white);
+  padding: 20px;
+  width: 350px;
+  min-width: 0;
+  overflow: hidden;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .name {
+  font-size: 18px;
+  font-weight: 700;
+}
