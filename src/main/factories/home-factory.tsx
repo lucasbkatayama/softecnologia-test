@@ -3,10 +3,10 @@ import { AxiosCreateEmployee, AxiosLoadEmployeeList, AxiosRemoveEmployee, AxiosU
 import Home from '../../presentation/pages/home/home'
 
 const HomeFactory: React.FC = () => {
-  const axiosLoadEmployeeList = new AxiosLoadEmployeeList(import.meta.env.VITE_API_DOMAIN)
-  const axiosRemoveEmployee = new AxiosRemoveEmployee(import.meta.env.VITE_API_DOMAIN)
-  const axiosCreateEmployee = new AxiosCreateEmployee(import.meta.env.VITE_API_DOMAIN)
-  const axiosUpdateEmployee = new AxiosUpdateEmployee(import.meta.env.VITE_API_DOMAIN)
+  const axiosLoadEmployeeList = new AxiosLoadEmployeeList(`${import.meta.env.VITE_API_DOMAIN}/employee`)
+  const axiosRemoveEmployee = new AxiosRemoveEmployee(`${import.meta.env.VITE_API_DOMAIN}/employee`)
+  const axiosCreateEmployee = new AxiosCreateEmployee(`${import.meta.env.VITE_API_DOMAIN}/employee`)
+  const axiosUpdateEmployee = new AxiosUpdateEmployee(`${import.meta.env.VITE_API_DOMAIN}/employee`)
 
   console.log(import.meta.env)
 

@@ -8,7 +8,7 @@ export class AxiosUpdateEmployee implements UpdateEmployee {
 
   async update (params: UpdateEmployeeParams): Promise<null> {
     try {
-      const { data } = await axios.put(this.url, params)
+      const { data } = await axios.put(`${this.url}/${params.id}`, params)
       return data
     } catch (error) {
       throw new Error(error)

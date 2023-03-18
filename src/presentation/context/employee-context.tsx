@@ -14,7 +14,7 @@ type PropsTypes = {
   children: ReactNode
 }
 
-const initialEmployeeValue = {
+export const INITAL_EMPLOYEE_STATE = {
   id: '',
   name: '',
   phone: '',
@@ -26,7 +26,7 @@ const EmployeeProvider:React.FC<PropsTypes> = (props: PropsTypes) => {
   const { children } = props
 
   const [employees, setEmployees] = useState<EmployeeModel[]>([] as EmployeeModel[])
-  const [employee, setEmployee] = useState<EmployeeModel>(initialEmployeeValue)
+  const [employee, setEmployee] = useState<EmployeeModel>(INITAL_EMPLOYEE_STATE)
 
   return (
     <EmployeeContext.Provider value={{employees, setEmployees, employee, setEmployee}}>

@@ -3,7 +3,7 @@ import { FaExclamationTriangle } from 'react-icons/fa'
 
 import './home.css'
 import { Header, Card, Footer, Modal, Button, Form, Spinner } from '../../components';
-import { EmployeeContext } from '../../context/employee-context';
+import { EmployeeContext, INITAL_EMPLOYEE_STATE } from '../../context/employee-context';
 import { LoadEmployeeList, CreateEmployee, RemoveEmployee, UpdateEmployee } from '../../../domain/usecases';
 import { EmployeeModel } from '../../../domain/models';
 
@@ -42,6 +42,8 @@ const Home:React.FC<Props> = ({ loadEmployeeList, createEmployee, removeEmployee
     event.preventDefault()
     if (loading) return
     setLoading(true)
+    setShowCreateModal(false)
+    setEmployee(INITAL_EMPLOYEE_STATE)
     try {
       await createEmployee.create(employee)
       const data = await loadEmployeeList.load();
@@ -57,6 +59,8 @@ const Home:React.FC<Props> = ({ loadEmployeeList, createEmployee, removeEmployee
     event.preventDefault()
     if (loading) return
     setLoading(true)
+    setShowEditModal(false)
+    setEmployee(INITAL_EMPLOYEE_STATE)
     try {
       await updateEmployee.update(employee)
       const data = await loadEmployeeList.load();
@@ -113,7 +117,7 @@ const Home:React.FC<Props> = ({ loadEmployeeList, createEmployee, removeEmployee
       <Modal open={showEditModal} onClickClose={() => setShowEditModal(false)}>
         <Form onChangeInput={handleChange} employee={employee} createFormRef={createFormRef} title='Editar' onSubmit={onSubmitEdit} />
       </Modal>
-      <Modal open={false} onClickClose={() => setErrorMessage('')}>
+      <Modal open={!!errorMessage} onClickClose={() => setErrorMessage('')}>
         <FaExclamationTriangle size={50} color='#ffb703' />
         <p className='modal-text'>{errorMessage}</p>
       </Modal>
